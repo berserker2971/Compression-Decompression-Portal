@@ -1,87 +1,93 @@
 # 🗜️ Data Compression & Decompression Portal
 
-A full-stack web application that enables users to compress and decompress files using popular data compression algorithms. This portal demonstrates the practical efficiency of each algorithm through real-time compression statistics and helps users understand how different algorithms behave with various file types.
+A full-stack web application that allows users to upload, compress, and decompress files using various popular algorithms. Built for both learning and utility, this project demonstrates how lossless data compression works and gives users hands-on experience with real-time compression feedback and file handling operations.
 
 This project is ideal for learning how compression works at a systems level and how to build a robust file-handling web app from scratch.
 
 ---
 
-## ✨ Key Features
-
-- 📁 **File Upload**  
-  Upload any text, binary, or image file for compression or decompression.
-
-- 📦 **Compression Algorithms**  
-  Choose from 3 industry-relevant algorithms:
-  - **Huffman Coding** (statistical compression)
-  - **Run-Length Encoding (RLE)** (pattern-based)
-  - **LZ77** (dictionary-based sliding window)
-
-- 📉 **Compression Statistics**  
-  For each operation, users can view:
-  - Original file size
-  - Compressed file size
-  - Compression ratio (%)
-  - Processing time (in seconds)
-
-- 📥 **Download Options**  
-  Users can download compressed or decompressed files directly.
-
-- 🧹 **Clear Functionality**  
-  Instantly remove all uploads and downloads with one click.
-
-- 📘 **Algorithm Explanations**  
-  Built-in expandable sections that explain how each algorithm works.
-
-- 🎨 **Modern UI**  
-  A responsive, animated, dark-themed interface built with React.
-
----
-
-## 🧠 Algorithm Overview
-
-### 🔢 Huffman Coding
-A lossless compression algorithm that builds a binary tree based on the frequency of symbols. Frequently occurring characters use shorter binary codes. Works well for textual data with non-uniform symbol distribution.
-
-### 🔁 Run-Length Encoding (RLE)
-Replaces sequences of the same value (e.g., `"AAAA"`) with a value and count (`"A4"`). Best for repetitive data (like simple images or large whitespace).
-
-### 🪟 LZ77
-Uses a sliding window to find repeated sequences and replaces them with references to earlier matches. Great for larger and more complex files, especially text.
-
----
-
-## 🛠 Tech Stack
-
-### Frontend
-- ⚛️ React.js
-- 🎯 Axios for HTTP requests
-- 🎨 Custom CSS (Dark theme)
-- 🗂 FileReader API
-
-### Backend
-- 🧠 Node.js + Express
-- 📦 Multer (file uploads)
-- 🧾 Custom algorithm implementations (Huffman, RLE, LZ77)
-- 🧱 `fs` module for file I/O
-
-### Hosting
-- 🔼 Vercel (Frontend)
-- ⚙️ Render (Backend)
-
----
-
 ## 🚀 Live Demo
 
-- 🌐 **Frontend**: [https://compression-decompression-portal-fr.vercel.app/](https://compression-decompression-portal-fr.vercel.app/)  
-- 🔧 **Backend**: [https://compression-decompression-portal-backend.onrender.com](https://compression-decompression-portal-backend.onrender.com)  
-- 📹 **Demo Video**: [Google Drive / YouTube Link](#)
+- 🌐 Frontend: [https://your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
+- ⚙️ Backend: [https://your-render-url.onrender.com](https://your-render-url.onrender.com)
+- 🎥 Demo Video: [Google Drive / YouTube](#)
 
 ---
 
-## 🔧 Local Development
+## ✨ Key Features
 
-### 🧪 Backend
+### 📂 File Upload & Handling
+- Users can upload **any type of file** (text, image, binary).
+- Uses robust upload handling with validation for empty files or missing algorithm selection.
+
+### 🧠 Multiple Compression Algorithms
+- **Huffman Coding**: Frequency-based binary encoding for lossless text compression.
+- **Run-Length Encoding (RLE)**: Encodes repetitive patterns into compact form, best for simple image/text data.
+- **LZ77**: Uses a sliding window to compress repeated sequences by referencing earlier occurrences.
+
+### 📉 Real-Time Compression Statistics
+- See meaningful data post-compression:
+  - **Original file size**
+  - **Compressed file size**
+  - **Compression ratio** (percentage)
+  - **Time taken to compress/decompress**
+- These stats are displayed live after each operation.
+
+### 📥 Download Processed Files
+- Users can instantly download compressed or decompressed files.
+- Browser-safe download links, supporting multiple file types.
+
+### 💡 Algorithm Explanations
+- Expandable `<details>` sections explain the logic behind each algorithm in simple terms.
+- Useful for students and developers curious about how the algorithms differ.
+
+### 🧹 Clear Downloads & Uploads Folder
+- A single button on the frontend allows users to delete all uploads, compressed, and decompressed files on the server.
+- The button becomes disabled after clearing to avoid accidental clicks.
+
+### 🎨 Modern Responsive UI
+- Fully responsive UI built with React.
+- Dark theme with clean layout and clear call-to-actions.
+- CSS animations and transitions provide a smooth user experience.
+
+### 🛠️ Robust Backend Architecture
+- Express.js server with modular route handling (`/upload`, `/decompress`, `/clear-downloads`).
+- Uses `Multer` for file handling and `fs` for local disk operations.
+- Compression algorithms are modular and built in custom JavaScript files for extensibility.
+
+### 🔐 Safe & Controlled Operations
+- Files are never permanently stored.
+- The server enforces error handling, feedback on unsupported formats, and validation on every API.
+
+### 🌐 Deployment Ready
+- Backend deployed on **Render**
+- Frontend deployed on **Vercel**
+- Works in production without any additional setup
+
+---
+
+## 🧠 How the Algorithms Work
+
+### 🔢 Huffman Coding
+- Builds a binary tree based on symbol frequencies.
+- Assigns shorter codes to frequent symbols and longer ones to rare symbols.
+- Great for natural language text and any non-uniform character set.
+
+### 🔁 Run-Length Encoding (RLE)
+- Encodes repeating sequences as a single value and count.
+- Ideal for data with many consecutive repetitions (e.g., `"AAAAA"` → `"A5"`).
+- Works well for simple black/white images or structured text data.
+
+### 🪟 LZ77
+- Dictionary-based method that looks for recurring data patterns.
+- Maintains a "sliding window" to find and replace duplicates with references.
+- Works efficiently on large files with recurring sequences.
+
+---
+
+## 🧪 Running Locally
+
+### 🔧 Backend
 
 ```bash
 cd backend
@@ -89,65 +95,70 @@ npm install
 node index.js
 ```
 
-> Backend runs at: `http://localhost:5000`
-
----
-
-### 🎯 Frontend
+### ⚛️ Frontend
 
 ```bash
-cd ../frontend
+cd frontend
 npm install
 npm start
 ```
 
-> Create a `.env` file in `frontend/`:
-```
+Create a `.env` file in `/frontend`:
+
+```env
 REACT_APP_API_BASE_URL=http://localhost:5000
 ```
 
-> Frontend runs at: `http://localhost:3000`
+---
+
+## 🧼 Folder Cleanup Feature
+
+The "🧹 Clear Downloads Folder" button removes:
+- `/uploads`
+- `/downloads/compressed`
+- `/downloads/decompressed`
+
+Prevents unnecessary file buildup on the server.
 
 ---
 
-## 🧼 Folder Cleanup
-
-To avoid disk space clutter, the portal includes a **"Clear Downloads Folder"** button.  
-This removes uploaded, compressed, and decompressed files from the server.
-
----
-
-## 📁 Folder Structure
+## 📁 Project Structure
 
 ```
 compression-portal/
 ├── backend/
-│   ├── routes/          # Express routes for upload/decompress/clear
-│   ├── utils/           # Huffman, RLE, LZ77 implementations
-│   ├── uploads/         # Uploaded raw files
-│   ├── downloads/       # Compressed and decompressed files
-│   └── index.js         # Main server file
+│   ├── routes/
+│   ├── utils/
+│   ├── uploads/
+│   ├── downloads/
+│   └── index.js
 ├── frontend/
-│   ├── src/
-│   │   └── App.js       # React frontend logic
 │   ├── public/
-│   └── .env             # API base URL
+│   ├── src/
+│   └── App.js
 └── README.md
 ```
 
 ---
 
-## 🛤️ Future Improvements
+## 🛤️ Future Enhancements
 
-- 🌐 Add multilingual support
-- 📊 Visualize compression ratios using Chart.js
-- 🗃 Add user history with database (MongoDB)
-- 🔐 User authentication (login + saved files)
+- 📊 Visualize compression ratio with Chart.js
+- 🧾 File history table with timestamps
+- 🗃 Optional database logging (MongoDB)
+- 🔐 User auth for session tracking
+- 🖼 Native preview of compressed images
 
 ---
 
+## 📜 License
+
+MIT License
+
+---
 
 ## 🙋 Author
 
 **Sparsh Gautam**  
-[GitHub](https://github.com/berserker2971)
+[GitHub](https://github.com/berserker2971)  
+[LinkedIn](#)
