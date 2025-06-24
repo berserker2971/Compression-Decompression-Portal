@@ -10,7 +10,7 @@ This project is ideal for learning how compression works at a systems level and 
 
 - 🌐 Frontend: [https://compression-decompression-portal-fr.vercel.app/](https://compression-decompression-portal-fr.vercel.app/)
 - ⚙️ Backend: [https://compression-decompression-portal-backend.onrender.com](https://compression-decompression-portal-backend.onrender.com)
-- 🎥 Demo Video: [Google Drive / YouTube](https://youtu.be/Pm5WaJlZUfs)
+- 🎥 Demo Video: [Watch the Demo](https://youtu.be/Pm5WaJlZUfs)
 
 ---
 
