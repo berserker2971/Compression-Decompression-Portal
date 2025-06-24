@@ -124,8 +124,6 @@ function App() {
     </section>
 
     <hr style={{ margin: '2rem 0' }} />
-
-    {/* 🧹 Clear Downloads Button */}
     <div style={{ marginBottom: '2rem' }}>
       <button
         style={{

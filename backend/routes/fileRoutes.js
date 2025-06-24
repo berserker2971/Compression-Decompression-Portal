@@ -7,7 +7,6 @@ const router = express.Router();
 const { rleCompress, rleDecompress } = require('../utils/rle');
 const huffman  = require('../utils/huffman');
 const lz77 = require('../utils/lz77');
-const FileRecord = require('../models/fileRecord');
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -56,16 +55,6 @@ router.post('/upload', upload.single('file'), async (req, res) => {
     const compressedSize = fs.statSync(compressedPath).size;
     const ratio = ((compressedSize / originalSize) * 100).toFixed(2) + '%';
 
-    await FileRecord.create({
-      filename: compressedFilename,
-      originalName: req.file.originalname,
-      sizeBefore: originalSize,
-      sizeAfter: compressedSize,
-      algorithm,
-      operation: 'compress',
-      processingTime: processingTime.toFixed(3),
-      filePath: compressedPath
-    });
     res.json({
       message: 'Compression successful',
       algorithm,
@@ -110,16 +99,6 @@ router.post('/decompress', upload.single('file'), async (req, res) => {
     const end = Date.now();
     const processingTime = (end - start) / 1000;
 
-    await FileRecord.create({
-      filename: outputFilename,
-      originalName: req.file.originalname,
-      sizeBefore: req.file.size,
-      sizeAfter: decompressedSize,
-      algorithm,
-      operation: 'decompress',
-      filePath: outputPath
-    });
-
     res.json({
       message: 'Decompression successful',
       algorithm,
@@ -149,9 +128,7 @@ router.post('/clear-downloads', async (req, res) => {
       }
     });
 
-    await FileRecord.deleteMany({}); 
-
-    res.json({ message: 'Uploads, downloads, and logs cleared successfully.' });
+    res.json({ message: 'Uploads and downloads.' });
   } catch (err) {
     console.error('Failed to clear downloads/uploads:', err);
     res.status(500).json({ error: 'Failed to clear files.' });

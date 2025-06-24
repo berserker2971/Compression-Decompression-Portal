@@ -1,10 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/compressionPortal');
-
 const fileRoutes = require('./routes/fileRoutes');
 
 const app = express();
