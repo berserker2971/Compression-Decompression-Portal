@@ -1,0 +1,1145 @@
+1.1 Introduction
+Vector algebra1 is the algebra of vectors: a set of mathematical rules that allows meaningful and useful operations in the
+study of electromagnetics. We will define vectors and the necessary operations shortly, but, for now, it is useful to remember
+the following axiom which will be followed throughout this book: Nothing will be defined, no quantity or operation will be
+used, unless it has some utility either in explaining the observed physical quantities or otherwise simplifies the discussion of
+a topic. This is important because, as we increase our understanding of the subject, topics may seem to be disconnected,
+particularly in this and the following chapter. The discussion of vector algebra and vector calculus will be developed
+separately from the ideas of the electromagnetic field but for the purpose of describing the electromagnetic field. It is also
+implicit in this statement that by doing so, we should be able to simplify the discussion of electromagnetics and, necessarily,
+better understand the physical properties of fields.
+Vector algebra is a set of rules that apply to vector quantities. In this sense, it is similar to the algebra we are all familiar
+with (which we may call scalar algebra): it has rules, the rules are defined and then followed, and the rules are self-consistent.
+Because at this point we know little about electromagnetics, the examples given here will be taken from other areas:
+mechanics, elementary physics, and, in particular, from everyday experience. Any reference to electric or magnetic
+quantities will be in terms of circuit theory or generally known quantities. The principle is not to introduce quantities and
+relations that we do not fully understand. It sometimes comes as a surprise to find that many of the quantities involved in
+electromagnetics are familiar, even though we may have never thought of them in this sense. All that the rules of vector
+algebra do is to formalize these rather loose bits of information and define their interactions. At that point, we will be able to
+use them in a meaningful way to describe the behavior of fields in exact terms using a concise notation.
+It is worth mentioning that vector algebra (and vector calculus, which will be discussed in the following chapter) contains
+a very small number of quantities and operations. For this reason, the vector notation is extremely compact. There are only
+two quantities required: scalars and vectors. Four basic operations are required for vectors: addition, vector scaling, scalar
+product, and vector product.
+1 Vector analysis, of which vector algebra is a subset, was developed simultaneously and independently by Josiah Willard Gibbs (1839–1903) and
+Oliver Heaviside (1850–1924) around 1881, for the expressed purpose of describing electromagnetics. The notation used throughout is more or
+less that of Heaviside. Vector analysis did not gain immediate acceptance. It was considered to be “useless” by Lord Kelvin, and many others
+thought of it as “awfully difficult,” as Heaviside himself mentions in his introduction to vector algebra. Nevertheless, by the end of the nineteenth
+century, it was in general use.
+N. Ida, Engineering Electromagnetics, DOI 10.1007/978-3-319-07806-9_1,
+# Springer International Publishing Switzerland 2015
+1
+In addition, we will define distributions of vectors and scalars in space as vector and scalar fields and will introduce the
+commonly used coordinate systems. The discussion in this chapter starts with the definition of scalars and vectors in
+Cartesian coordinates. The latter is assumed to be known and is used exclusively in the first few sections, until cylindrical
+and spherical coordinates are defined.
+1.2 Scalars and Vectors
+A quantity is a scalar if it has only a magnitude at any location in space for a given time. To describe the mass of a body, all
+we need is the magnitude of its mass or, for a distributed mass, the distribution in space. The same applies to the altitude of a
+mountain or the length of a road. These are all scalar quantities and, in particular, are static scalar quantities (independent of
+time). In terms of quantities useful in the study of electromagnetics, we also encounter other scalars such as work, energy,
+time, temperature, and electric potential (voltage). Scalar sources also play an important role: The electric charge or charge
+distribution (for example, charge distributed in a cloud) will be seen as sources of fields. The source of a 1.5 V cell is its
+potential and is a scalar source.
+A vector, on the other hand, is described by two quantities: a magnitude and a direction in space at any point and for any
+given time. Therefore, vectors may be space and time dependent. Common vectors include displacement, velocity, force,
+and acceleration. To see that the vector definition is important, consider a weather report giving wind speeds. The speed
+itself is only part of the information. If you are sailing, direction of the wind is also important. For a pilot, it is extremely
+important to know if the wind also has a downward component (shear wind), which may affect the flight plan. Sometimes,
+only the magnitude may be important: The electric generating capability of a wind-driven turbine is directly proportional to
+the normal (perpendicular to the turbine blades) component of the wind. Other times we may only be interested in direction.
+For example, the news report may say: “The rocket took off straight up.” Here, the direction is the important information,
+and although both direction and magnitude are available, for one reason or another, the liftoff speed or acceleration is not
+important in this statement. The unit associated with a quantity is not part of the vector notation.
+The use of vectors in electromagnetics is based on two properties of the vector. One is its ability to describe both
+magnitude and direction. The second is its very compact form, which allows the description of quantities with great economy
+in notation. This economy in notation eases handling of otherwise awkward expressions but also requires familiarity with the
+implications of the notation. In a way, it is like shorthand. A compact notation is used, but it also requires us to know how to
+read it so that the information conveyed is meaningful and unambiguous.
+To allow instant recognition of a vector quantity, we denote vectors by a boldface letter such as E, H, a, and b. Scalar
+quantities are denoted by regular letters: E, H, a, and b. In handwriting, it is difficult to make the distinction between normal
+and boldface lettering. A common method is to use a bar or arrow over the letter to indicate a vector. Thus,E, H, a, b, are also
+vectors. If a quantity is used only as a vector, there is no need to distinguish it from the corresponding scalar quantity. Some
+vector operators (which will be discussed in the following chapter) are of this type. In these instances, neither boldface nor
+bar notation is needed since there is no room for confusion.
+1.2.1 Magnitude and Direction of Vectors: The Unit Vector and Components of a Vector
+The magnitude of a vector is that scalar which is numerically equal to the vector:
+A ¼ j j A ð1:1Þ
+The magnitude of a vector is its length and includes the units of the vector. Thus, for example, the magnitude of a velocity
+vector v is the speed v [m/s]. To define the direction of a vector A, we employ the idea of the unit vector. A unit vector Aˆ is a
+vector of magnitude one (dimensionless) in the direction of A:
+A^ ¼ A
+j j A ¼ A
+A ð1:2Þ
+2 1 Vector Algebra
+Thus, Aˆ can be viewed as a new dimensionless vector of unit magnitude (jAˆ j ¼ 1) in the direction of, or parallel to, the
+vector A. Figure 1.1 shows a vector, its magnitude, and its unit vector.
+Vectors may have components in various directions. For example, a vehicle moving at a velocity v on a road that runs SE
+to NW has two equal velocity components, one in the N direction and one in the W direction, as shown in Figure 1.2a. We
+can write the velocity of the vehicle in terms of two velocity components as
+v ¼ N^ vN þ W^ vW ¼ N^ v
+ffiffiffi
+2
+p
+2 þ W^ v
+ffiffiffi
+2
+p
+2 ð1:3Þ
+The two terms on the right-hand side (N^ v ffiffiffi
+2
+p =2 and W^ v ffiffiffi
+2
+p =2) are called the vector components of the vector. The
+components of the vectors can also be viewed as scalars by taking only their magnitude. These are called scalar components.
+This definition is used extensively when standard systems of coordinates are used and the directions in space are known. In
+this case, the scalar components are v ffiffiffi
+2
+p =2 in the N and W directions. To avoid confusion as to which type of component is
+used, we will always indicate specifically the type of component unless it is obvious which type is meant.
+We chose here a particular system of coordinates to demonstrate that the system of coordinates is a matter of choice. The
+same can be accomplished by laying a standard system of coordinates, say the rectangular coordinate system over the road
+map shown in Figure 1.2a. This action transforms the road map into a standard coordinate system, and now, using
+Figure 1.2b, we can write
+v ¼ ^x vx þ ^y vy ¼ ^x v
+ffiffiffi
+2
+p
+2 þ ^y v
+ffiffiffi
+2
+p
+2 ð1:4Þ
+The components of the vector are in the x and y directions. The magnitude of the vector is v, and this is written directly
+from the geometry in Figure 1.2b as
+v ¼ 
+v
+
+ ¼ 
+  ^x vx þ ^y vy
+
+ ¼
+ffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+v2
+x þ v2
+y
+q
+ð1:5Þ
+The unit vector is in the direction of v and is given as
+^v ¼ v
+j j v ¼ ^x vx þ ^y vy
+^x vx þ ^y vy
+
+ 
+ ¼ ^x vx þ ^y vy ffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+v2
+x þ v2
+y
+q ¼ ^x
+ffiffiffi
+2
+p
+2 þ ^y
+ffiffiffi
+2
+p
+2 ð1:6Þ
+A
+A |A| 1
+Figure 1.1 The relations between vector A, the unit vector Aˆ , and the magnitude of the vector jAj
+N
+S
+W E
+v
+U
+vN
+vW
+45°
+road
+y
+x
+v
+vx z
+vy 45
+Figure 1.2 (a) A a b
+convenient coordinate
+system. (b) A more
+“standard” coordinate system
+1.2 Scalars and Vectors 3
+It is important to note that although the unit vector ^v has unit magnitude, its components in the x and y directions do not.
+Their magnitude is ffiffiffi
+2
+p =2. This may seem to be a minor distinction, but, in fact, it is important to realize that the vector
+components of a unit vector are not necessarily of unit magnitude. Note, also, that the magnitude of ^x and ^y is one since these
+are the unit vectors in the direction of the vector components of v, namely, x and y.
+In this case, both the vector and the unit vector were conveniently written in terms of a particular coordinate system.
+However, as a rule, any vector can be written in terms of components in other coordinate systems. An example is the one
+used to describe directions as N, S, W, and E. We shall discuss this separately, but from the above example, some systems are
+clearly more convenient than others. Also to be noted here is that a general vector in space written in the Cartesian system
+has three components, in the x, y, and z directions (see below). The third dimension in the above example of velocity gives
+the vertical component of velocity as the vehicle moves on a nonplanar surface.
+In the right-handed Cartesian system (or right-handed rectangular system), we define three coordinates as shown
+in Figure 1.3. A point in the system is described as P(x0,y0,z0), and the general vector A, connecting two general points
+P1(x1,y1,z1) and P2(x2,y2,z2), is given as
+Að Þ¼ x; y;z ^x Axð Þþ x; y;z ^y Ayð Þþ x; y;z ^z AzðÞ ð x; y;z 1:7Þ
+where the scalar components Ax, Ay, and Az are the projections of the vector on the x, y, and z coordinates, respectively. These
+are
+Ax ¼ x2  x1, Ay ¼ y2  y1, Az ¼ z2  z1 ð1:8Þ
+The length of the vector (i.e., its magnitude) is
+A ¼
+ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+A2
+x þ A2
+y þ A2
+z
+q
+¼
+ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+ð Þ x2  x1
+2 þ y2  y1 ð Þ2 þ ð Þ z2  z1
+2
+q
+ð1:9Þ
+and the unit vector in the direction of vector A is
+A^ ¼ Að Þ x; y;z
+A xð Þ ; y;z ¼ ^x ð Þþ x2  x1 ^y y2  y1 ð Þþ ^z ð Þ z2  z1 ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+ð Þ x2  x1
+2 þ y2  y1 ð Þ2 þ ð Þ z2  z1
+2
+q ð1:10Þ
+or
+A^ ¼ ^x ð Þ x2  x1
+A þ ^y
+y2  y1 ð Þ
+A þ ^z ð Þ z2  z1
+A ð1:11Þ
+We will make considerable use of the unit vector, primarily as an indicator of direction in space. Similarly, the use of
+components is often employed to simplify analysis.
+x
+y
+z
+x0
+y0
+z0
+P(x0 , y0 , z0)
+Figure 1.3 A point in the Cartesian system of coordinates
+4 1 Vector Algebra
+Example 1.1 A vector is given as A ¼ ^x 5  ^y ð Þþ 3x þ 2 ^z . Calculate:
+(a) The scalar components of the vector in the x, y, and z directions.
+(b) The length of the vector.
+(c) The unit vector in the direction of A.
+Solution: The solution makes use of Eqs. (1.8) through (1.11). In this case, the vector (and all its properties) depends on the
+variable x alone, although it has components in the y and z directions:
+(a) The scalar components of the vector are the coefficients of the three unit vectors:
+Ax ¼ 5, Ay ¼ ð Þ 3x þ 2 , Az ¼ 1
+Note: The negative sign is part of the scalar component, not the unit vector.
+(b) The length of the vector is given by Eq. (1.9):
+A ¼
+ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+A2
+x þ A2
+y þ A2
+z
+q
+¼
+ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+ð Þ 5 2 þ ð Þ ð Þ 3x þ 2 2 þ 12
+q
+¼ ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+9x2 þ 12x þ 30 p
+(c) The unit vector is calculated from Eq. (1.11):
+A^ ¼ ^x
+5 ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+9x2 þ 12x þ 30 p  ^y
+3x þ 2 ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+9x2 þ 12x þ 30 p þ ^z
+1 ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+9x2 þ 12x þ 30 p
+where the scalar components Ax, Ay, and Az and the magnitude of A calculated in (a) and (b) were used.
+Example 1.2 An aircraft takes off at a 60 angle and takeoff speed of 180 km/h in the NE–SW direction. Find:
+(a) The velocity vector of the aircraft.
+(b) Its direction in space.
+(c) Its ground velocity (i.e., the velocity of the aircraft’s shadow on the ground).
+Solution: First, we choose a system of coordinates. In this case, E–W, N–S, and D (down)–U (up) is an appropriate choice.
+This choice describes the physics of the problem even though it is not the most efficient system we can use. (In the exercise
+that follows, the Cartesian system is used instead.) The components of velocity are calculated from the magnitude
+(180 km/h) of velocity and angle using projections on the ground and vertically, followed by the velocity vector and the
+unit vector:
+(a) The aircraft velocity has two scalar components: the vertical component vu ¼ 180sin60 and the ground component
+vg ¼ 180cos60. These speeds are given in km/h. The SI units call for the second as the unit of time and the meter as
+the unit of distance. Thus, we convert these speeds to m/s. Since 180 km/h ¼ 50 m/s, we get vg ¼ 50cos60 and
+vu ¼ 50sin60. The west and south components are calculated from vg, as (see Figure 1.4)
+vw ¼ 50cos60
+cos45
+, vs ¼ 50cos60
+sin45 m
+s
+h i
+The third component is vu. Thus, the velocity vector is
+v ¼ W^ 50cos60
+cos45
+þ S^ 50cos60
+sin45
+þ U^ 50sin60
+¼ W^ 17:678 þ S^ 17:678 þ U^ 43:3 m½  =s
+(b) The direction in space is given by the unit vector
+^v ¼ v
+j j v ¼ W^ 50cos60
+cos45
+þ S^ 50cos60
+sin45
+þ U^ 50sin60
+ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+50cos60
+cos45    2 þ 50cos60
+sin45    2 þ 50sin60
+ð Þ2 q ¼ W^
+ffiffiffi
+2
+p
+4 þ S^
+ffiffiffi
+2
+p
+4 þ U^
+ffiffiffi
+3
+p
+2
+hm
+s
+i
+1.2 Scalars and Vectors 5
+(c) Ground velocity is the velocity along the ground plane. This is calculated by setting the vertical velocity of the aircraft
+found in (a) to zero:
+v ¼ W^ 50cos60
+cos45
+þ S^ 50cos60
+sin45
+¼ W^ 17:678 þ S^ 17:678
+m
+s
+h i
+Note: It is useful to convert the units to SI units at the outset. This way there is no confusion as to what units are used, and
+what the intermediate results are, at all stages of the solution.
+Exercise 1.1 Solve Example 1.2 in the Cartesian system of coordinates with the positive x axis coinciding with
+E (east), positive y axis with N (north), and positive z axis with U (up).
+Answer
+(a) v ¼ ^x 50cos60
+cos45
+ ^y 50cos60
+sin45
+þ ^z 50sin60
+½  m=s
+(b) ^v ¼ ^x ffiffiffi
+2
+p =4  ^y ffiffiffi
+2
+p =4 þ ^z ffiffiffi
+3
+p =2 m½  =s
+(c) vg ¼ ^x 50cos60
+cos45
+ ^y 50cos60
+sin45
+½  m=s
+1.2.2 Vector Addition and Subtraction Point_Charges.m
+The first vector algebra operation that needs to be defined is vector addition. This is perhaps the most commonly performed
+vector operation.
+The sum of two vectors results in a third vector
+A þ B ¼ C ð1:12Þ
+To see how this operation is carried out, we use two general vectors A ¼ ^x Ax þ ^y Ay þ ^z Az and B ¼ ^x Bx þ ^y By þ ^z Bz
+in Cartesian coordinates and write
+C ¼ A þ B ¼ ^x Ax þ ^y Ay þ ^z Az
+   þ 
+^x Bx þ ^y By þ ^z Bz
+ 
+¼ ^xCx þ ^y Cy þ ^z Cz
+   ð1:13Þ
+N
+S
+W E
+U
+v
+vu
+vW
+vg
+vs
+60º
+45º
+45º
+Figure 1.4 Velocity terms along the axes and on the ground
+6 1 Vector Algebra
+Adding components in the same directions together gives
+C ¼ ^x ð Þþ Ax þ Bx ^y Ay þ By
+   þ ^z ðÞ ð Az þ Bz 1:14Þ
+Figure 1.5 shows this process: In Figure 1.5a, vectors A and B are separated into their three components. Figure 1.5b
+shows that vector C is obtained by adding the components of A and B, which, in turn, are equivalent to translating the vector
+B (without changing its direction in space or its magnitude) so that its tail coincides with the head of vector A. Vector C is
+now the vector connecting the tail of vector A with the head of vector B. This sketch defines a general graphical method of
+calculating the sum of two vectors:
+(1) Draw the first vector in the sum.
+(2) Translate the second vector until the tail of the second vector coincides with the head of the first vector.
+(3) Connect the tail of the first vector with the head of the second vector to obtain the sum.
+The process is shown in Figure 1.6 in general terms. This method of calculating the sum of two vectors is sometimes
+called the head-to-tail method or rule. An alternative method is obtained by generating two sums A + B and B + A using the
+above method. The two sums are shown in Figure 1.7a as two separate vectors and as a single vector in Figure 1.7b. The
+result is a parallelogram with the two vectors, connected tail to tail forming two adjacent sides, and the remaining two sides
+are parallel lines to the vectors. This method is summarized as follows:
+(1) Translate vector B so that its tail coincides with the tail of vector A.
+(2) Construct the parallelogram formed by the two vectors and the two parallels to the vectors.
+(3) Draw vector C with its tail at the tails of vectors A and B and head at the intersection of the two parallel lines (dashed
+lines in Figure 1.8).
+This method is shown in Figure 1.8 and is called the parallelogram rule.
+x
+y
+z
+A
+a b
+B
+Bx
+By
+Bz
+Az
+Ax
+Ay
+A
+B
+C
+x
+y
+z
+Az
+Ax
+Ay
+Bx
+By
+Bz
+Figure 1.5 (a) Two vectors A and B and their x, y, and z components. (b) Addition of vectors A and B by adding their
+components
+A
+B
+C=A+B
+A
+B
+Figure 1.6 Addition of two
+vectors by translating vector
+B until its tail coincides with
+the head of vector A. The
+sum A + B is the vector
+connecting the tail of vector
+A with the head of vector B
+B
+C=A+B
+A
+A
+a b
+C=B+A
+B
+B
+A
+A
+B
+C
+Figure 1.7 Calculating the
+sums C ¼ A + B and
+C ¼ B + A
+1.2 Scalars and Vectors 7
+Vector subtraction is accomplished by noting the following:
+A  B ¼ A þ ð Þ¼ B A^ A þ B^   B ð1:15Þ
+This indicates that vector subtraction is the same as the addition of a negative vector. In terms of the tail-to-head or
+parallelogram method, we must first reverse the direction of vector B and then perform summation of the two vectors. This is
+shown in Figure 1.9.
+Summation or subtraction of more than two vectors should be viewed as a multiple-step process. For example:
+A þ B þ C ¼ ð Þþ A þ B C ¼ D þ C ð1:16Þ
+The sum D ¼ A + B is calculated first using the above methods and then the sum D + C is evaluated similarly. The same
+applies to subtraction.
+Note: Any of the two graphical methods of calculating the sum of two vectors may be used, but, in computation, it is often
+more convenient to separate the vectors into their components and calculate the sum of the components. This is particularly
+true if we also need to calculate unit vectors. The graphical methods are more useful in understanding what the sum of the
+vector means and to visualize the direction in space.
+Vector summation and subtraction are associative and commutative processes; that is:
+A þ B ¼ B þ A ðÞ ð commutative 1:17Þ
+ð Þþ A þ B C ¼ A þ ð Þ B þ C ðÞ ð associative 1:18Þ
+The vector addition is also distributive, but we will only show this in Section 1.2.3.
+Example 1.3 Two vectors A and B (such as the velocity vectors of two aircraft) are A ¼ ^x 1 þ ^y 2 þ ^z 3 and
+B ¼ ^x 4  ^z 3. Calculate:
+(a) The sum of the two vectors.
+(b) The difference A – B and B – A (these differences represent the relative velocities of A with respect to B and of B
+with respect to A).
+Solution: (a) The vectors are placed on the system of coordinates shown in Figure 1.10a, and the components of A and B
+are found as shown. The components of vector C ¼ A + B are now found directly from the figure. In (b), we write the two
+expressions D ¼ A – B and E ¼ B – A and add together the components:
+(a) Vector A has scalar components of 1, 2, and 3 in the x, y, and z directions, respectively. It may therefore be viewed as
+connecting the origin (as a reference point) to point P1(1,2,3), as shown in Figure 1.10a. Vector B is in the x–z plane
+B
+A
+B
+A C
+Figure 1.8 The
+parallelogram method. The
+dashed lines are used to
+show that opposite sides are
+equal and parallel
+B
+A
+A
+C=A+(−B)
+−B −B
+A
+−B
+A
+Figure 1.9 Subtraction of
+vector B from vector A
+8 1 Vector Algebra
+and connects the origin to point P2(4,0,–3). The vectors may be translated anywhere in space as long as their lengths and
+directions are not changed. Translate vector A such that its tail touches the head of vector B. This is shown in
+Figure 1.10b in terms of the components (i.e., translation of vector A so that its tail coincides with the head of vector
+B is the same as translating its components so that their tails coincide with the heads of the corresponding components of
+vector B). The sum C ¼ A + B is the vector connecting the tail of vector B with the head of vector A. The result is
+(writing the projections of vector C onto the x, y, and z axes):
+C ¼ ^x 5 þ ^y 2
+(b) To calculate the differences, we add the vector components of the two vectors together, observing the sign of each vector
+component:
+D ¼ A  B ¼ ð Þ ^x 1 þ ^y 2 þ ^z 3 
+^x 4  ^z 3
+ 
+¼ ^x ð Þþ 1  4 ^y
+
+2  0
+ 
+þ ^z
+
+3  
+ 3
+  
+or
+A  B ¼ ^x 3 þ ^y 2 þ ^z 6
+E ¼ B  A ¼ ð Þ ^x 4  ^z 3 
+^x 1 þ ^y 2 þ ^z 3
+ 
+¼ ^x ð Þþ 4  1 ^y
+
+0  2
+ 
+þ ^z
+  3
+ 
+ 3
+ 
+or
+B  A ¼ ^x 3  ^y 2  ^z 6
+Exercise 1.2 Three vectors are given: A ¼ ^x 1 þ ^y 2 þ ^z 3,B ¼ ^x 4  ^y 2 þ ^z 3, and C ¼ ^x 4. Calculate:
+(a) A + B + C.
+(b) A + B – 2C.
+(c) A – B – C.
+(d) The unit vector in the direction of A – 2B + C.
+Answer
+(a) A þ B þ C ¼ ^x 1 þ ^z 6:
+(b) A þ B  2C ¼ ^x 13þ^z 6:
+(c) A  B  C ¼ ^x 1 þ ^y 4:
+(d) ^x 0:8538 þ ^y 0:4657  ^z 0:2328:
+x
+y
+z
+a b
+A
+Ay B
+Az
+Bz
+Bx
+x
+y
+z
+C
+Bx Ax
+Ay
+Ax
+Figure 1.10 (a) Components of vectors A and B. (b) The sum C ¼ A + B is obtained by summing the components of A
+and B
+1.2 Scalars and Vectors 9
+1.2.3 Vector Scaling
+A vector can be scaled by multiplying its magnitude by a scalar value. Scaling is defined as changing the magnitude of the
+vector:
+kA ¼ k A^ A
+ 	 ¼ A^ ðÞ ð kA 1:19Þ
+The term “multiplication” for vectors is not used to avoid any confusion with vector products, which we define in the
+following section. Scaling of a vector is equivalent to “lengthening” or “shortening” the vector without modifying its
+direction if k is a positive constant, as shown in Figure 1.11a. Increasing the velocity of an aircraft (without change in
+direction) from 300 to 330 km/h scales the velocity vector by a factor of k ¼ 1.1. If k is negative, the resulting scaled vector
+has a magnitude jkj times its nonscaled magnitude but also a negative direction, as shown in Figure 1.11b.
+Vector scaling is both associative and commutative but not distributive (simply because the product of two vectors has
+not been defined yet); that is,
+kA ¼ Ak ðÞ ð commutative 1:20Þ
+k pð Þ¼ A ð Þ kp A ðÞ ð associative 1:21Þ
+Also,
+kð Þ¼ A þ B kA þ kB ð1:22Þ
+The latter shows that the vector sum is distributive.
+1.3 Products of Vectors
+The multiplication of two vectors is called a product. Here, we define two types of products based on the result obtained
+from the product. The first type is the scalar product. This is a product of two vectors which results in a scalar. The second is a
+vector product of two vectors, which results in a vector. Beyond the form of the product, these have important physical and
+geometrical meanings which make them some of the most useful and often encountered vector operations.
+1.3.1 The Scalar Product
+A scalar product of two vectors A and B is denoted as A·B and is defined as
+“the product of the magnitudes of A and B and the cosine of the smaller angle between A and B”; that is,
+AB   ABcosϕAB ð1:23Þ
+A
+a b
+kA
+A −kA
+Figure 1.11 (a) Scaling of vector A by a positive scalar k. (b) Scaling of vector A by a negative scalar k
+10 1 Vector Algebra
+where the angle ϕAB is the smaller angle between A and B, as shown in Figure 1.12. The sign   indicates that Eq. (1.23) is
+the definition of the scalar product. The result is a scalar. The scalar product is often called a dot product because of the dot
+notation used. It has a number of properties that we will exploit later:
+(1) For any angle 0  ϕAB < π /2, the scalar product is positive. For angles above π/2 (π/2 < ϕAB  π), the scalar product
+is negative.
+(2) The scalar product is zero for any two perpendicular vectors (ϕAB ¼ π/2).
+(3) For ϕAB ¼ 0 (parallel vectors), the scalar product equals AB, and for ϕAB ¼ π, the product is (–AB).
+(4) The magnitude of the scalar product of two vectors is always smaller or equal to the product of their magnitudes
+(jA·Bj  AB).
+(5) The product can be viewed as the product of the magnitude of vector A and the magnitude of the projection of vector B
+on A or vice versa (A·B ¼ A(BcosϕAB) ¼ B(AcosϕAB)).
+(6) The scalar product is commutative and distributive:
+AB ¼ B A ðÞ ð commutative 1:24Þ
+Að Þ¼ B þ C AB þ A C ðÞ ð distributive 1:25Þ
+The scalar product can be written explicitly using two vectors A and B in Cartesian coordinates as
+AB ¼ ^x Ax þ ^y Ay þ ^z Az
+  
+
+^x Bx þ ^y By þ ^z Bz
+ 
+¼ ^x  ^x AxBx þ ^x  ^y AxBy þ ^x  ^z AxBz þ ^y  ^x AyBx þ ^y  ^y AyBy þ ^y  ^z AyBz þ ^z  ^x AzBx þ ^z  ^y AzBy þ ^z  ^z AzBz
+ð1:26Þ
+From properties (2) and (3) and since unit vectors are of magnitude 1, we have
+^x  ^y ¼ ^x ^z ¼ ^y  ^z ¼ ^y  ^x ¼ ^z  ^x ¼ ^z  ^y ¼ 0 ð1:27Þ
+^x  ^x ¼ ^y  ^y ¼ ^z ^z ¼ 1 ð1:28Þ
+Therefore, Eq. (1.26) becomes
+AB ¼ AxBx þ AyBy þ AzBz ð1:29Þ
+This form affords simple evaluation of the product from the components of the vectors rather than requiring
+calculation of the angle between the vectors. From this, we also note that
+A A ¼ AAcos 0ð Þ¼ A2 ¼ A2
+x þ A2
+y þ A2
+z ð1:30Þ
+Example 1.4 Calculate the projection of a general vector A onto another general vector B and the vector component
+of A in the direction of B.
+A
+B
+φAB
+B cosφAB
+Figure 1.12 Definition of the scalar product between vectors A and B. The smaller angle between the vectors is used
+1.3 Products of Vectors 11
+Solution: The projection of vector A onto B is AcosϕAB. This is
+AcosϕAB ¼ AB
+B ¼ AxBx þ AyBy þ AzBz ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+B2
+x þ B2
+y þ B2
+z
+q :
+To calculate the vector component of A in the direction of B, we note that the magnitude of this component is the projection
+calculated above, whereas the direction of the component is that of the unit vector in the direction of B. The latter is
+B^ ¼ B
+j j B ¼ ^x Bx þ ^y By þ ^z Bz ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+B2
+x þ B2
+y þ B2
+z
+q :
+The vector component of vector A in the direction of vector B is therefore
+AB ¼ B^ AcosϕAB ¼ ^x Bxð Þþ AB ^y Byð Þþ AB ^z Bzð Þ AB
+B2
+x þ B2
+y þ B2
+z
+¼ ^x
+Bx AxBx þ AyBy þ AzBz
+  
+B2
+x þ B2
+y þ B2
+z
+þ ^y
+By AxBx þ AyBy þ AzBz
+  
+B2
+x þ B2
+y þ B2
+z
+þ ^z
+Bz AxBx þ AyBy þ AzBz
+  
+B2
+x þ B2
+y þ B2
+z
+:
+Example 1.5 Two vectors are given as A ¼ ^x þ ^y 5  ^z and B ¼ ^x þ ^y 5 þ ^z . Find the angle between the two
+vectors.
+Solution: Using the scalar product, the cosine of the angle between the vectors is evaluated from Eq. (1.23) as
+cos ϕAB ¼ AB
+AB ! ϕAB ¼ cos 1 AB
+AB  :
+The magnitudes of A and B are
+A ¼ j j A ¼ ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+1 þ 25 þ 1 p ¼ ffiffiffiffiffi
+27 p ¼ 3 ffiffiffi
+3
+p , B ¼ j j B ¼ ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+1 þ 25 þ 1 p ¼ ffiffiffiffiffi
+27 p ¼ 3 ffiffiffi
+3
+p
+The scalar product of A and B is
+AB ¼ ð Þ ^x þ ^y 5  ^z ð Þ¼ ^x þ ^y 5 þ ^z 1 þ 25  1 ¼ 23:
+Thus
+cosϕAB   AB
+AB ¼ 23
+3 ffiffiffi
+3
+p  3 ffiffiffi
+3
+p ¼ 0:85185 ! ϕAB ¼ cos 1ð Þ¼ 0:85185 31
+350
+:
+Example 1.6 Application: The Cosine Formula The two vectors of the previous example are given and drawn
+schematically in Figure 1.13:
+(a) Show that the distance between points P1 and P2 is given by
+d ¼
+ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+A2 þ B2  2ABcosϕAB q
+:
+(b) Calculate this length for the two vectors.
+Solution: This example is recognizable as the application of the cosine formula and, in fact, may be viewed as
+its derivation. Assuming a third vector pointing from P1 to P2 as shown in Figure 1.13, we calculate this vector as
+C ¼ B – A. The scalar product C  C gives the distance C2
+. This is the distance between P1 and P2 squared. Taking the
+square root gives the required result:
+12 1 Vector Algebra
+(a)
+C2 ¼ C C ¼ ð Þ B  A ð Þ¼ B  A BB þ A A  2B A
+Since B  B ¼ B2
+, A  A ¼ A2
+, and B  A ¼ A  B ¼ BAcosϕBA ¼ ABcosϕAB, we get
+C2 ¼ A2 þ B2  2ABcosϕAB ! C ¼ ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+A2 þ B2  2ABcosϕAB p
+(b) For the two vectors in Example 1.5
+A ¼ ^x þ ^y 5  ^z , B ¼ ^x þ ^y 5 þ ^z :
+we calculated
+A ¼ 3 ffiffiffiffiffi
+3, p B ¼ 3 ffiffiffiffiffi
+3, p cosϕAB ¼ 0:85185
+The distance between P2 and P1 is therefore
+d ¼
+ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+A2 þ B2  2ABcosϕAB q
+¼ ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+27 þ 27  2  27  0:85185 p ¼ 2:828
+Exercise 1.3 An airplane flies with a velocity v ¼ ^x 100 þ ^y 500 þ ^z 200: Calculate the aircraft’s velocity in the
+direction of the vector A ¼ ^x þ ^y þ ^z :
+Answer vA ¼ ^x 800=3 þ ^y 800=3 þ ^z 800=3
+1.3.2 The Vector Product
+The vector product2 of two vectors A and B, denoted as A  B, is defined as
+“the vector whose magnitude is the absolute value of the product of the magnitudes of the two vectors and the sine of
+the smaller angle between the two vectors while the direction of the vector is perpendicular to the plane in which the
+two vectors lie”;
+that is,
+A  B   n^ ABsinϕAB j j ð1:31Þ
+where n^ is the unit vector normal to the plane formed by vectors A and B and ϕAB is, again, the smaller angle between the
+vectors. The normal unit vector gives the direction of the product, which is obviously a vector. For this reason, it is called a
+vector product or a cross product because of the cross symbol used in the notation.
+A
+B
+−A
+C=B−A
+B+(−A)
+P1
+P2
+Figure 1.13 Diagram used to prove the cosine formula
+2 The vector product was defined by Sir William Rowan Hamilton (1805–1865) as part of his theory of quaternions around 1845. James Clerk
+Maxwell made use of this theory when he wrote his Treatise on Electricity and Magnetism in 1873, although he was critical of quaternions.
+Modern electromagnetics uses the Heaviside–Gibbs vector system rather than the Hamilton system.
+1.3 Products of Vectors 13
+The unit vector may be in either direction perpendicular to the plane, and to define it uniquely, we employ the right-hand
+rule, as shown in Figure 1.14. According to this rule, if the right-hand palm is placed on the first vector in the product and
+rotated toward the second vector through an angle ϕAB, the extended thumb shows the correct direction of the cross product.
+This rule immediately indicates that moving the palm from vector B to vector A gives a direction opposite to that moving
+from vector A to B. Thus, we conclude that the vector product is not commutative:
+A  B ¼ B  A ðÞ ð noncommutative 1:32Þ
+In addition to the noncommutative property of the vector product, the following properties are noted:
+(1) The vector product is always perpendicular to the plane of the two vectors; that is, it is perpendicular to both vectors.
+(2) For two vectors which are perpendicular to each other (ϕAB ¼ π/2), the magnitude of the vector product is equal to the
+product of the magnitudes of the two vectors (sinϕAB ¼ 1) and is always positive.
+(3) The vector product of two parallel vectors is always zero (sinϕAB ¼ 0).
+(4) The vector product of a vector with itself is always zero (sinϕAA ¼ 0).
+(5) The vector product is not associative (this will be discussed in the following section because it requires the definition of a
+triple product).
+(6) The vector product is distributive:
+A  ð Þ¼ B þ C A  B þ A  C ð1:33Þ
+(7) The magnitude of the vector product represents the area bounded by the parallelogram formed by the two vectors and
+two lines parallel to the vectors, as shown in Figure 1.15.
+Evaluation of the vector product is performed similarly to that for the scalar product: We write the product explicitly and
+expand the expression based on Eq. (1.33). Using two general vectors A and B in Cartesian coordinates, we get
+A  B ¼ ^x Ax þ ^y Ay þ ^z Az
+    
+^x Bx þ ^y By þ ^z Bz
+ 
+¼ ð Þ ^x ^x AxBx þ 
+^x ^y
+ 
+AxBy þ 
+^x ^z
+ 
+AxBz
+þ ð Þ ^y ^x AyBx þ 
+^y ^y
+ 
+AyBy þ 
+^y ^z
+ 
+AyBz
+þ ð Þ ^z ^x AzBx þ 
+^z ^y
+ 
+AzBy þ 
+^z ^z
+ 
+AzBz
+ð1:34Þ
+A
+B
+n
+A×B
+φAB
+Figure 1.14 The vector product between vectors A and B
+A
+B S=|A×B|
+Figure 1.15 Interpretation of the magnitude of the vector product as a surface
+14 1 Vector Algebra
+Because the unit vectors ^x , ^y , ^z are perpendicular to each other, and using the right-hand rule in Figure 1.14, we can write
+^x  ^x ¼ ^y  ^y ¼ ^z  ^z ¼ 0 ð1:35Þ
+from property 4 above. Similarly, using property 2 and the right-hand rule, we can write
+^x  ^y ¼ ^z , ^y  ^z ¼ ^x , ^z  ^x ¼ ^y ,
+^y  ^x ¼ ^z , ^z  ^y ¼ ^x , ^x  ^z ¼ ^y ð1:36Þ
+Substitution of these products and rearranging terms gives
+A  B ¼ ^x AyBz  AzBy
+   þ ^y ð Þþ AzBx  AxBz ^z AxBy  AyBx
+   ð1:37Þ
+This is a rather straightforward operation, although lengthy. To avoid having to go through this process every time we use
+the vector product, we note that the expression in Eq. (1.37) has the form of the determinant of a 3  3 matrix:
+A  B ¼
+^x ^y ^z
+Ax Ay Az
+Bx By Bz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¼ ^x AyBz  AzBy
+   þ ^y ð Þþ AzBx  AxBz ^z AxBy  AyBx
+   ð1:38Þ
+In the system of coordinates used here (right-hand Cartesian coordinates), the vector product is cyclic; that is, the
+products in Eq. (1.36) are cyclical, as shown in Figure 1.16. This is a simple way to generate the signs of the components of
+the cross product: a cross product performed in the sequence shown by the arrows in Figure 1.16a is positive; if it is in the
+opposite sequence (Figure 1.16b), it is negative.
+The vector product is used for a number of important operations. They include finding the direction of the vector product,
+calculation of areas, evaluation of normal unit vectors, and representation of fields.
+Example 1.7 Application: Vector Normal to a Plane
+(a) Find a vector normal to a plane that contains points P1(0,1,0), P2(1,0,1), and P3(0,0,1).
+(b) Find the normal unit vector.
+Solution: This is a common use for the vector product. Because the vector product of two vectors is normal to both vectors,
+we must first find two vectors that lie in the plane. Their vector product gives the normal vector. Calculation of the normal
+unit vector can be done either using the definition of the unit vector in Eq. (1.2) or through the use of the scalar and vector
+products.
+Two vectors in the plane can be defined using any two pairs of points. Using P1 and P2, we define a vector (from P1 to P2) as
+A ¼ ^x ð Þþ x2  x1 ^y
+
+y2  y1
+ 
+þ ^z
+
+z2  z1
+ 
+¼ ^x ð Þþ 1  0 ^y
+
+0  1
+ 
+þ ^z
+
+1  0
+ 
+¼ ^x 1  ^y 1 þ ^z 1
+Similarly for a second vector, we choose the vector between P1 and P3. This gives
+B ¼ ^x ð Þþ x3  x1 ^y
+
+y3  y1
+ 
+þ ^z
+
+z3  z1
+ 
+¼ ^x ð Þþ 0  0 ^y
+
+0  1
+ 
+þ ^z
+
+1  0
+ 
+¼ ^y 1 þ ^z 1
+x=y×z
+y=z×x
+z=x×y
+−x=z×y
+−y=x×z
+−z=y×x
+z z
+y
+a b
+y
+x x
+Figure 1.16 The cyclical
+relations between the
+various vector products of
+the unit vectors in Cartesian
+coordinates. (a) Positive
+sequence. (b) Negative
+sequence
+1.3 Products of Vectors 15
+The cross product, C, is a vector normal to both A and B and, therefore, to the plane:
+A  B ¼ ð Þ ^x 1  ^y 1 þ ^z 1 
+ ^y 1 þ ^z 1
+ 
+¼ ^x 1  ð Þþ ^y 1 ^x 1  ^z 1 þ 
+ ^y 1
+ 
+ 
+ ^y 1
+ 
+þ ð Þ ^y 1 ^z 1 þ ^z 1  
+ ^y 1
+ 
+þ ^z 1  ^z 1
+Using the identities in Eqs. (1.35) and (1.36), we get
+C ¼ A  B ¼ ^y 1  ^z 1
+The unit vector can be found from Eq. (1.2) or from the definition of the vector product in Eq. (1.31). We use the latter as
+an example of an alternative method:
+n^ ¼ A  B
+ABsinϕAB j j
+The angle ϕAB can be most easily calculated from the scalar product in Eq. (1.23) as
+ϕAB ¼ cos 1 AB
+AB 
+To do so, we need to evaluate the scalar product and the magnitude of the vectors. These are
+AB ¼ ð Þ ^x 1  ^y 1 þ ^z 1 ð Þ¼ ^y 1 þ ^z 1 2, A ¼ ffiffiffi
+3
+p B ¼ ffiffiffi
+2
+p
+Thus,
+ϕAB ¼ cos 1 2
+ffiffiffi
+6
+p
+  ¼ 35
+160
+The unit normal vector is now
+n^ ¼ A  B
+ABsinϕAB j j ¼ ^y 1  ^z 1 ffiffiffi
+6
+p sin 3516   0 
+ 
+ ¼ ^y 1  ^z 1
+1:4142 ¼ ^y 0:7071  ^z 0:7071
+The same result is obtained using Eq. (1.2):
+n^ ¼ A  B
+j j A  B ¼ ^y 1  ^z 1
+j j ^y 1  ^z 1 ¼ ^y 1  ^z 1 ffiffiffi
+2
+p ¼ ^y 0:7071  ^z 0:7071
+Exercise 1.4 Vectors A ¼ ^x 1  ^y 2 þ ^z 3 and B ¼ ^x 3 þ ^y 5 þ ^z 1 are in a plane, not necessarily perpendicular to
+each other. Vector C ¼ ^x 17 + ^y 8  ^z 11 is perpendicular to the same plane. Show that the vector product between
+C and A (or between C and B) must also be in the plane of A and B.
+Example 1.8 Application: Area of a Triangle Find the area of the triangle with vertices at three general points P1(x1,
+y1, z1), P2(x2,y2,z2), and P3(x3,y3,z3) (Figure 1.17a).
+Solution: In this case, the vector nature of the vector product is irrelevant, but the magnitude of the vector product in
+Eq. (1.31) is equal to the area of the parallelogram formed by the two vectors. This can be seen from the fact that the
+magnitude of A  B is A(BsinϕAB). This is the area of rectangle abb0
+c0 in Figure 1.17b. Since triangles acc0 and bdb0 are
+identical, this is also the area of parallelogram abdc. Since triangles abc and cbd are identical, the area of abc is equal to half
+the area of abdc. Calculation of the area of triangle abc is done by calculating the magnitude of the cross product of two of
+the vectors forming the sides of the triangle and dividing by 2:
+Sabc ¼ j j A  B
+2
+16 1 Vector Algebra
+From Figure 1.17a, vectors A and B are
+A ¼ ^x ð Þþ x2  x1 ^y
+
+y2  y1
+ 
+þ ^z
+
+z2  z1
+ 
+,
+B ¼ ^x ð Þþ x3  x1 ^y
+
+y3  y1
+ 
+þ ^z
+
+z3  z1
+ 
+The vector product is obtained using Eq. (1.38), and from this, the area of the triangle is
+Sabc ¼ j j A  B
+2 ¼ 1
+2
+^x ^y ^z
+x2  x1 y2  y1 z2  z1
+x3  x1 y3  y1 z3  z1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercise 1.5 Find the area of the triangle formed by points (1,3,0), (1,2,1), and (3,5,2).
+Answer ffiffiffiffiffi
+24 p =2 ¼ 2:4495=m2:
+Example 1.9 Find a unit vector normal to both of the vectors
+A ¼ ^x 3 þ ^y 1  ^z 2, B ¼ ^x 1  ^y 5:
+Solution: The vector products A  B or B  A result in vectors normal to both A and B, respectively:
+A  B ¼ ð Þ ^x 3 þ ^y 1  ^z 2 
+^x 1  ^y 5
+ 
+¼ ð Þ ^x 3 
+^x 1
+ 
+þ 
+^x 3
+ 
+ 
+ ^y 5
+ 
+þ 
+^y 1
+ 
+ 
+^x 1
+ 
+þð Þ  ^y 1 ð Þþ  ^y 5 ð Þ ^z 2 ð Þþ  ^x 1 ð Þ  ^z 2 ð Þ ^y 5
+¼ ^x 10  ^y 2  ^z 16
+The unit vector is
+n^ ¼ ^x 10  ^y 2  ^z 16
+j j ^x 10  ^y 2  ^z 16 ¼ ^x 10  ^y 2  ^z 16 ffiffiffiffiffiffiffi
+360 p ¼ ^x 5  ^y  ^z 8
+3 ffiffiffiffiffi
+10 p
+Using the product B  A results in a unit vector n^ as can be shown by application of the right-hand rule.
+a b
+A
+B
+A
+B
+|B|
+|A|
+a b
+c d
+a
+b
+c'
+b'
+φAB φAB
+BsinφAB
+P1
+P1
+P2
+P2
+P3
+P3
+c
+Figure 1.17 Area of a triangle. (a) A triangle with two of its sides shown as vectors. (b) The area of the triangle is half the
+area of the parallelogram abdc
+1.3 Products of Vectors 17
+Example 1.10 The general equation of a plane in Cartesian coordinates is ax + by + cx + d ¼ 0. The equation of
+the plane may be found as f(x,y,z) ¼ n  C ¼ 0 where n is the normal vector to the plane and C is a general vector in
+the plane.
+(a) Given three points P1(1,0,2), P2(3,1,–2), P3(2,3,2) in a plane, find the equation of the plane.
+(b) Show that the equation of the plane may be written as
+f xð Þ¼ ; y;z nxð Þþ x  x0 ny y  y0 ð Þþ nzð Þ¼ z  z0 0
+where nx, ny, and nz are the scalar components of the normal unit vector to the plane and (x0,y0,z0) are the
+coordinates of a point in the plane.
+Solution: The three points given define two vectors (say P1 to P2 and P1 to P3). The normal to the plane is obtained through
+use of the vector product. The vector A is then defined between a general point (x,y,z) and any of the points given. The form
+in (b) is found from (a):
+(a) Two vectors necessary to calculate the normal vector to the plane are
+P1 to P2: A ¼ ^x ð Þþ 3  1 ^y ð Þþ 1  0 ^z ð Þ¼ 2  2 ^x 2 þ ^y 1  ^z 4
+P1 to P3: B ¼ ^x ð Þþ 2  1 ^y ð Þþ 3  0 ^z ð Þ¼ 2  2 ^x 1 þ ^y 3
+These two vectors are in the plane. Therefore, the normal vector to the plane may be written as:
+n ¼ A  B ¼ ð Þ ^x 2 þ ^y 1  ^z 4 ð Þ¼ ^x 1 þ ^y 3 ^x 12  ^y 4 þ ^z 5
+A general vector in the plane may be written as:
+C ¼ ^x ð Þþ x  1 ^y ð Þþ y  0 ^z ð Þ z  2
+where point P1 was used, arbitrarily.
+The equation of the plane is
+f xð Þ¼ ; y;z n C ¼ ð Þ ^x 12  ^y 4 þ ^z 5 ð Þ¼ ^x ð Þþ x  1 ^y ð Þþ y  0 ^z ð Þ z  2 0
+or
+f xð Þ¼ ; y;z 12ð Þ x  1 4ð Þþ y  0 5ð Þ¼ z  2 12x  4y þ 5z  22 ¼ 0
+(b) To show that the formula given produces the same result, we first calculate the normal unit vector:
+n^ ¼ ^x
+12
+ffiffiffiffiffiffiffi
+185 p  ^y
+4
+ffiffiffiffiffiffiffi
+185 p þ ^z
+5
+ffiffiffiffiffiffiffi
+185 p
+The point (x0,y0,z0) can be any point in the plane. Selecting P3, for example, the equation of the plane is
+f xð Þ¼ ; y;z 12
+ffiffiffiffiffiffiffi
+185 p ð Þ x  2
+4
+ffiffiffiffiffiffiffi
+185 p ð Þþ y  3 5
+ffiffiffiffiffiffiffi
+185 p ð Þ¼ z  2 0
+Multiplying both sides of the equation by ffiffiffiffiffiffiffi
+185 p , we get
+f xð Þ¼ ; y;z 12ð Þ x  2 4ð Þþ y  3 5ð Þ¼ z  2 12x  4y þ 5z  22 ¼ 0
+This is the same as the result obtained in (a).
+The formula in (b) is called the scalar equation of the plane whereas the form f(x,y,z) ¼ n  C ¼ 0 is referred to as the
+vector equation of the plane.
+1.3.3 Multiple Vector and Scalar Products
+As with sums of vectors, we can define multiple products by repeatedly applying the rules of the scalar or vector product of
+two vectors. However, because of the particular method of defining the vector and scalar products, not all combinations of
+products are meaningful. For example, the result of a vector product is a vector, and therefore, it can only be obtained by
