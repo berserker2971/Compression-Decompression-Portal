@@ -8,8 +8,8 @@ This project is ideal for learning how compression works at a systems level and 
 
 ## 🚀 Live Demo
 
-- 🌐 Frontend: [https://your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
-- ⚙️ Backend: [https://your-render-url.onrender.com](https://your-render-url.onrender.com)
+- 🌐 Frontend: [https://compression-decompression-portal-fr.vercel.app/](https://compression-decompression-portal-fr.vercel.app/)
+- ⚙️ Backend: [https://compression-decompression-portal-backend.onrender.com](https://compression-decompression-portal-backend.onrender.com)
 - 🎥 Demo Video: [Google Drive / YouTube](#)
 
 ---
