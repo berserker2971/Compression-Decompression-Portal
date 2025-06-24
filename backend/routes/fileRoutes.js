@@ -71,6 +71,18 @@ router.post('/upload', upload.single('file'), async (req, res) => {
   }
 });
 
+router.get('/download-file/:type/:filename', (req, res) => {
+  const { type, filename } = req.params;
+  const filePath = path.join(__dirname, '..', 'downloads', type, filename);
+
+  res.download(filePath, filename, (err) => { 
+    if (err) {
+      console.error('Download error:', err);
+      res.status(404).send('File not found.');
+    }
+  });
+});
+
 router.post('/decompress', upload.single('file'), async (req, res) => {
   const algorithm = req.body.algorithm;
   if (!req.file || !algorithm) {

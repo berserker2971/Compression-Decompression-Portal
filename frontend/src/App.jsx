@@ -112,7 +112,7 @@ function App() {
             <p><strong>✅ Decompression successful!</strong></p>
             <p>Processing Time: {decompressed.processingTime}</p>
             <a
-              href={`${API_BASE}${decompressed.downloadUrl}`}
+              href={`${BASE_URL}/api/download-file/decompressed/${decompressed.downloadUrl.split('/').pop()}`}
               download
               target="_blank"
               rel="noopener noreferrer"
