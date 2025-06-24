@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const API = import.meta.env.VITE_API_URL;
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 function App() {
   const [file, setFile] = useState(null);
@@ -26,7 +26,7 @@ function App() {
     formData.append('algorithm', algorithm);
 
     try {
-      const res = await axios.post(`${API}/api/upload`, formData);
+      const res = await axios.post(`${API_BASE}/api/upload`, formData);
       setResponse(res.data);
     } catch (err) {
       console.error(err);
@@ -44,7 +44,7 @@ function App() {
     formData.append('algorithm', algorithm);
 
     try {
-      const res = await axios.post(`${API}/api/decompress`, formData);
+      const res = await axios.post(`${API_BASE}/api/decompress`, formData);
       setDecompressed(res.data);
     } catch (err) {
       console.error(err);
@@ -80,7 +80,7 @@ function App() {
             <p>Compression Ratio: {response.ratio}</p>
             <p>Processing Time: {response.processingTime}</p>
             <a
-              href={`${API}${response.downloadUrl}`}
+              href={`${API_BASE}${response.downloadUrl}`}
               download
               target="_blank"
               rel="noopener noreferrer"
@@ -112,7 +112,7 @@ function App() {
             <p><strong>✅ Decompression successful!</strong></p>
             <p>Processing Time: {decompressed.processingTime}</p>
             <a
-              href={`${API}${decompressed.downloadUrl}`}
+              href={`${API_BASE}${decompressed.downloadUrl}`}
               download
               target="_blank"
               rel="noopener noreferrer"
@@ -134,7 +134,7 @@ function App() {
           onClick={async () => {
             if (downloadsCleared) return;
             try {
-              const res = await axios.post(`${API}/api/clear-downloads`);
+              const res = await axios.post(`${API_BASE}/api/clear-downloads`);
               alert(res.data.message);
               setDownloadsCleared(true);
             } catch (err) {
