@@ -10,7 +10,7 @@ This project is ideal for learning how compression works at a systems level and 
 
 - 🌐 Frontend: [https://compression-decompression-portal-fr.vercel.app/](https://compression-decompression-portal-fr.vercel.app/)
 - ⚙️ Backend: [https://compression-decompression-portal-backend.onrender.com](https://compression-decompression-portal-backend.onrender.com)
-- 🎥 Demo Video: [Google Drive / YouTube](#)
+- 🎥 Demo Video: [Google Drive / YouTube](https://youtu.be/Pm5WaJlZUfs)
 
 ---
 
@@ -86,29 +86,37 @@ This project is ideal for learning how compression works at a systems level and 
 ---
 
 ## 🧪 Running Locally
+### 1. Clone the Repository
 
-### 🔧 Backend
+```bash
+git clone https://github.com/berserker2971/Compression-Decompression-Portal
+cd Compression-Decompression-Portal
+```
+
+### 2. Backend
 
 ```bash
 cd backend
-npm install
 node index.js
 ```
 
-### ⚛️ Frontend
+### 3. Frontend
 
 ```bash
 cd frontend
-npm install
-npm start
+npm install -D vite
 ```
 
-Create a `.env` file in `/frontend`:
-
-```env
-REACT_APP_API_BASE_URL=http://localhost:5000
+### 4. Edit .env file to 
+```bash
+VITE_API_BASE_URL=http://localhost:5000
 ```
 
+### 5. Go back to bash
+```bash
+npm run build
+npm run dev
+```
 ---
 
 ## 🧼 Folder Cleanup Feature
