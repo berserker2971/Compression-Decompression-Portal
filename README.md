@@ -141,22 +141,6 @@ compression-portal/
 
 ---
 
-## 🛤️ Future Enhancements
-
-- 📊 Visualize compression ratio with Chart.js
-- 🧾 File history table with timestamps
-- 🗃 Optional database logging (MongoDB)
-- 🔐 User auth for session tracking
-- 🖼 Native preview of compressed images
-
----
-
-## 📜 License
-
-MIT License
-
----
-
 ## 🙋 Author
 
 **Sparsh Gautam**  
